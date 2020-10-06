@@ -1,0 +1,214 @@
+Q26=======================================================
+
+import java.util.*;
+
+//26.	Create an array of 17 elements in 5 rows.  And calculate sum of all elements.
+
+public class Ques26 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of rows : ");
+		int rows = sc.nextInt();
+		int arr[][] = new int[rows][];
+		for(int i = 0 ; i < arr.length ; i++) {
+			System.out.println("Enter coloum for row "+i+" : ");
+			int col = sc.nextInt();
+			arr[i] = new int[col];
+			for(int j = 0 ; j < arr[i].length ; j++ ) {
+				System.out.println("Entere element : ");
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		
+	
+		int sum = 0 ;
+		for(int ar[] :arr) {
+			for(int e : ar) {
+				System.out.print(" "+e);
+				sum = sum+e;
+			}
+			System.out.println("");
+		}
+		
+		System.out.println("Sum is : "+sum);
+
+	}
+
+}
+
+
+Q27===========================================================================================
+
+import java.util.Scanner;
+
+public class Ques27 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of Elements : ");
+		int n = sc.nextInt();
+		int a[] = new int[n];
+		for(int i = 0 ; i < a.length;i++) {
+			a[i] = sc.nextInt();
+		}
+		
+		int max = a[0];
+		int min = a[0];
+		
+		for(int i : a) {
+			if (i > max) {
+				max = i;
+			}
+			
+			if(i < min) {
+				min = i ;
+			}
+		}
+		
+		System.out.println("Maximum : "+max);
+		System.out.println("Minimum : "+min);
+
+	}
+
+}
+
+Q28===========================================================================
+
+
+public class Ques28 {
+
+	public static void main(String[] args) {
+		String [] names = {"Shantanu" , "Vipul" , "Aditya"};
+		
+		for (String n : names) {
+			System.out.println(n);
+		}
+
+	}
+
+}
+
+Q29=============================================================================
+
+public class Ques29 {
+
+	public static void main(String[] args) {
+		int a[] = {1,2,4,6};
+		int b[] = {7,9,2,3,};
+		int c[] = {8,9,2,3,4,8};
+		
+		int arr[][] = new int[3][];
+		arr[0] =a;
+		arr[1]=b;
+		arr[2]=c;
+		
+		int countA = 0;
+		
+		
+		for(int ar[] : arr) {
+			countA++;
+			int countB = 0;
+			for(int e : ar) {
+				countB++;
+				
+			}
+			System.out.println("Total number of elemnts in 1D array are :  "+countB);
+		}
+		System.out.println("Total number of 1D arrays are : "+countA);
+
+	}
+
+}
+
+
+Q30===================================================================
+
+package Day3;
+
+import java.util.Scanner;
+
+public class Ques30 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of rows : ");
+		int rows = sc.nextInt();
+		int arr[][] = new int[rows][];
+		for(int i = 0 ; i < arr.length ; i++) {
+			System.out.println("Enter coloum for row "+i+" : ");
+			int col = sc.nextInt();
+			arr[i] = new int[col];
+			for(int j = 0 ; j < arr[i].length ; j++ ) {
+				System.out.println("Entere element : ");
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		
+		int sum = 0 ;
+		for(int i = 0 ; i <arr.length ; i++) {
+			for(int j= 0 ; j <arr[i].length ; j++) {
+				System.out.print(" "+arr[i][j]);
+				
+				if( i == j ) {
+					sum = sum + arr[i][j];
+				}
+				
+			}
+			System.out.println("");
+		}
+		
+		System.out.println("Sum of diagonal ele is : "+sum);
+		
+		
+
+	}
+
+}
+
+
+Q31==========================================================================================
+
+package Day3;
+
+class Students{
+	 private int rno;
+	 private String name;
+	 public static int count = 0;
+	 
+	 void setData(int rno , String name) {
+		 this.rno = rno;
+		 this.name=name;
+		 count++;
+	 }
+	 
+	 void showData() {
+		  System.out.println("Student number :  "+count);
+		 System.out.println(rno +"       --       "+name);
+		 System.out.println("---------------------------------------");
+	 }
+	 
+}
+public class StudentDemo32 {
+
+	public static void main(String[] args) {
+
+		Students s1 = new Students();
+		s1.setData(006, "Aditya Soni");
+		s1.showData();
+		
+		Students s2 = new Students();
+		s2.setData(105, "Shantanu Upase");
+		s2.showData();
+		
+		Students s3 = s1;
+		s3.setData(134, "Vipul Zope");
+		s3.showData();
+
+	}
+
+}
+
+-------------------------------------------------End--------------------------------------
+
+

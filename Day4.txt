@@ -1,0 +1,407 @@
+Q34============================================================
+
+package Day4;
+
+import java.util.Scanner;
+
+class Circle{
+	private int radius ;
+	private double area;
+	
+	void init()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter radius");
+		int r = s.nextInt();
+		this.radius = r;
+	}
+	
+	void calculateArea() {
+		this.area = 3.14 * this.radius * this.radius;
+	}
+	
+	void show() {
+		System.out.println("Radius : " + radius);
+		System.out.println("Area : " + area);
+		System.out.println("----------------------------");
+	}
+	
+}
+
+public class Ques34 {
+
+	public static void main(String[] args) {
+		Circle c = new Circle();
+		c.init();
+		c.calculateArea();
+		c.show();
+
+	}
+
+}
+
+
+Q35=============================================================
+
+package day5;
+
+public class mathQ35 {
+
+	static int add(int a,int b)
+	{
+		int sum  = a + b;
+		return sum;
+	}
+	static int sub(int a,int b)
+	{
+		int sub  = a - b;
+		return sub;
+	}
+	static int mul(int a,int b)
+	{
+		int multi = a * b;
+		return multi;
+	}
+}
+
+package day5;
+import java.util.*;
+public class mainClassQ35 {
+
+	public static void main(String af[])
+	{
+		Scanner s =  new Scanner(System.in);
+		System.out.println("Enter two numbers");
+		int a = s.nextInt();
+		int b = s.nextInt();
+		System.out.println("The addition is  "+mathQ35.add(a, b));
+		System.out.println("The subtraction is  "+mathQ35.sub(a, b));
+		System.out.println("The multiplication is  "+mathQ35.mul(a, b));
+	}
+}
+Q36=====================================================================
+package day5;
+
+public class mathQ36 {
+
+	double multiply(int a,int b)
+	{
+		
+		int mul = a * b;
+		return mul;
+	}
+	double multiply(float a,float b,float c)
+	{
+		double mul = a * b * c;
+		return mul;
+	}
+	double multiply(int a,double b)
+	{
+		double mul = a * b;
+		return mul;
+	}
+	double multiply(int []a)
+	{
+		int mul = 1;
+		for(int i = 0 ; i < a.length ; i++)
+		{
+			mul*=a[i];
+		}
+		return mul;
+	}
+	
+}
+package day5;
+
+public class mainClassQ36 {
+
+	public static void main(String aa[])
+	{
+		int[] a = {1,2,3};
+		mathQ36 c = new mathQ36();
+		System.out.println(c.multiply(a));
+		System.out.println(c.multiply(10,20.0));
+	}
+}
+Q37================================================================
+package day5;
+
+public class personQ37 {
+	private int age;
+	private String name;
+	personQ37()
+	{
+		this.age = 18;
+	}
+	personQ37(int age,String name)
+	{
+		this.age = age;
+		this.name = name;
+	}
+	void display()
+	{
+		System.out.println("The age is "+age);
+		System.out.println("The name of student is "+name);
+	}
+}
+
+
+package day5;
+
+public class mainClassQ37 {
+
+	public static void main(String aa[])
+	{
+		personQ37 p = new personQ37();
+		p.display();
+		personQ37 p1 = new personQ37(23,"Vipul");
+		p1.display();
+	}
+}
+Q38======================================================================
+package day5;
+
+public class empQ38 {
+
+	static int empid = 0;
+	private int salary;
+	static int totalSal;
+	
+	empQ38(int sal)
+	{
+		empid+=1;
+		this.salary  = sal;
+		totalSal +=sal;
+	}
+	void display()
+	{
+		System.out.println("Total Employees are "+empid);
+		System.out.println("The total sal is "+totalSal);
+		System.out.println("----------------");
+	}
+}
+
+package day5;
+
+public class mainClassQ38 {
+
+	public static void main(String arr[])
+	{
+		empQ38 q = new empQ38(500);
+		q.display();	
+		empQ38 q1 = new empQ38(1500);
+		q1.display();	
+		empQ38 q2 = new empQ38(600);
+		q2.display();
+	}
+}
+
+Q39=============================================================================
+package day5;
+
+public class productQ39 {
+
+	public int pid;
+	public int price;
+	public int quantity;
+	
+	productQ39(int pid,int price,int quantity)
+	{
+		this.pid = pid;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	void display()
+	{
+		System.out.println("PID is "+pid);
+		System.out.println("Price is "+price);
+		System.out.println("Quantity "+quantity);
+	}
+}
+package day5;
+import java.util.*;
+public class mainClassQ39 {
+	public static void main(String a[])
+	{
+		Scanner c = new Scanner(System.in);
+		productQ39[] arr = new productQ39[2];
+		int max = 0;
+		for(int i = 0 ; i < arr.length;i++)
+		{
+			System.out.println("Enter id");
+			int pid = c.nextInt();
+			System.out.println("Enter Price");
+			int price = c.nextInt();
+			System.out.println("Enter Quantity");
+			int qu = c.nextInt();
+			productQ39 p = new productQ39(pid,price,qu);
+			arr[i] = p;
+			
+			
+			if(i == 0)
+			{
+				continue;
+			}
+			if(arr[i].price > arr[i - 1].price)
+				{
+					max = arr[i].price;
+				}
+		}
+		System.out.println("Max price is "+max);
+		
+	
+		
+	}
+}
+
+Q40================================================================
+
+
+Q41================================================================
+class Que41Student{
+	private int rollNo;
+	private String name;
+	
+	Que41Student() {
+		this(108,"Shraddha");
+		System.out.println("0-parameter");
+	}	
+
+	Que41Student(int rollNo, String name){
+		this.rollNo = rollNo;
+		this.name = name;
+		System.out.println("2-Parameter");
+		System.out.println(rollNo + " " +name);
+	}
+	
+}
+
+class Que41{
+	public static void main(String args[]){
+	Que41Student s = new Que41Student();
+	
+	}
+}
+
+
+Q42================================================================
+class Tile{
+	private int l;
+	
+	Tile(int l){
+		this.l = l;
+	}
+	int area() {
+		return l*l;
+	}
+}
+
+class Floor{
+	private int len;
+	private int b;
+	
+	Floor(int len , int b){
+		this.len = len ;
+		this.b = b ;
+	}
+	
+	
+	int totalTiles(Tile t) {
+		int res = 0 ;
+		int area = len*b;
+		
+		res = area / t.area();
+		return res;
+	}
+}
+
+
+
+public class Ques42 {
+
+	public static void main(String[] args) {
+			Tile t  = new Tile(5);
+			Floor f = new Floor(10,10);
+			int r = f.totalTiles(t);
+			System.out.println("No of tiles : "+r);
+
+	}
+
+}
+
+Q43=======================================================================================
+
+package com.assignments.day2;
+import java.util.*;
+
+class OneBHK{
+    double roomArea;
+    double hallArea;
+    double price;
+    
+    
+    OneBHK(){
+        
+    }
+    
+    OneBHK(double roomArea, double hallArea, double price){
+        this.roomArea = roomArea;
+        this.hallArea = hallArea;
+        this.price = price;
+    }
+    
+    public void show(){
+        System.out.println("Room Area : "+roomArea+", Hall Area : "+hallArea+", Price : "+price);
+    }
+}
+
+class TwoBHK extends OneBHK{
+    double room2Area;
+    
+    
+    TwoBHK(){
+        
+    }
+    
+    TwoBHK(double roomArea, double hallArea, double price, double room2Area){
+        super(roomArea, hallArea, price);
+        this.room2Area = room2Area;
+    }
+    
+    public void show(){
+        super.show();
+        System.out.println("Room2 Area : "+room2Area+" ");
+        
+        
+    }
+}
+
+
+public class Question43 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		double total = 0.00;
+	    TwoBHK arr[] = new TwoBHK[3];
+	    for(int i =0; i<3; i++){
+	        System.out.println("Enter Room1 area : ");
+	        double roomArea = sc.nextDouble();
+	        System.out.println("Enter Room2 area : ");
+	        double room2Area = sc.nextDouble();
+	        System.out.println("Enter Hall area : ");
+            double hallArea = sc.nextDouble();
+            System.out.println("Enter Price : ");
+            double price= sc.nextDouble();
+            total += price;
+            TwoBHK t = new TwoBHK(roomArea, room2Area, hallArea, price);
+            arr[i] = t;
+	    }
+	    
+	    for(int i=0; i<arr.length; i++)
+	        arr[i].show();
+	   System.out.println("Total Amount of Flats : "+total);
+	}
+}
